@@ -6,7 +6,7 @@
     }
 
     const PDFExport = () => {
-
+        
     }
 </script>
 
@@ -37,5 +37,6 @@
     </div>
     <div class=" flex justify-center">
         <button class="bg-white m-8 p-2 rounded-md" on:click={() => PDFExport()}>Export PDF</button>
+        <a href="/pdf/{1234}">Get PDF</a>
     </div>
 </div>
