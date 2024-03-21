@@ -20,7 +20,7 @@
         </div>
     </form>
     <div class=" flex justify-center">
-        <div class="h-48 w-48 bg-white flex justify-center  place-items-center">            
+        <div class="h-48 w-48 bg-white flex justify-center  place-items-center rounded-md">            
             <img
                 use:qr={{
                 data: 'B, Hans, Ruedi, 123123123',
