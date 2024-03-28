@@ -8,6 +8,25 @@
         Role: "",
     });
 
+    let fixedUserData = writable({
+        name: "",
+        IDNr: "",
+        Role: "",
+    });
+
+    let hideImg = true;
+
+    const handleSubmit = () => {
+        fixedUserData.update((data) => {
+            data.name = $userData.name;
+            data.IDNr = $userData.IDNr;
+            data.Role = $userData.Role;
+            return data;
+        });
+        hideImg = false;  
+    };
+    
+
     const downloadImg = () => {
         const imgsrc = document.getElementById("qr-code") as HTMLImageElement;
         if (!imgsrc) return;
@@ -18,7 +37,7 @@
     };
 </script>
 
-<div class="flex-col">
+<form class="flex-col" on:submit|preventDefault={() => handleSubmit()}>
     <div class=" flex justify-center my-12">
         <div class="grid grid-cols-2 gap-4">
             <input
@@ -26,28 +45,30 @@
                 placeholder="Name"
                 class="bg-gray-700 text-white border-2 border-white rounded-md p-2"
                 bind:value={$userData.name}
+                required
             />
             <input
-                type="text"
+                type="number"
                 placeholder="ID Nr."
                 class="bg-gray-700 text-white border-2 border-white rounded-md p-2"
                 bind:value={$userData.IDNr}
+                required
             />
             <input
                 type="text"
                 placeholder="Role"
                 class="bg-gray-700 text-white border-2 border-white rounded-md p-2"
                 bind:value={$userData.Role}
+                required
             />
+            <button class="bg-white p-2 rounded-md" type="submit" >Generate QR</button>
         </div>
     </div>
-    <div class=" flex justify-center">
-        <div
-            class="h-48 w-48 bg-white flex justify-center place-items-center rounded-md"
-        >
-            <img
+    <div class=" flex justify-center" >
+        <div class="h-48 w-48 bg-white flex justify-center place-items-center rounded-md" >
+            <img hidden={hideImg}
                 use:qr={{
-                    data: `${$userData.name} ${$userData.IDNr} ${$userData.Role}`,
+                    data: `${$fixedUserData.name} ${$fixedUserData.IDNr} ${$fixedUserData.Role}`,
                     logo: "https://svelte-put.vnphanquang.com/images/svelte-put-logo.svg",
                     shape: "circle",
                     anchorInnerFill: "black",
@@ -63,4 +84,4 @@
             >Downlaod QR Code</button
         >
     </div>
-</div>
+</form>
