@@ -41,7 +41,6 @@
       />
     </div>
   </div>
-  {#if $userData.name && $userData.IDNr && $userData.Role}
     <div class=" flex justify-center">
       <div
         class="h-48 w-48 bg-white flex justify-center place-items-center rounded-md"
@@ -56,11 +55,9 @@
             moduleFill: "black",
           }}
           alt="qr"
-          id="qr-code"
         />
       </div>
     </div>
-  {/if}
   <div class=" flex justify-center">
     <button class="bg-white m-8 p-2 rounded-md" on:click={downloadImg}
       >Downlaod QR Code</button
