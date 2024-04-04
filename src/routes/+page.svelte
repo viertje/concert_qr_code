@@ -14,6 +14,8 @@
         Role: "",
     });
 
+    const roles = ["Security", "Artist", "Photographer", "Crew"]
+
     let hideImg = true;
 
     const handleSubmit = () => {
@@ -54,13 +56,15 @@
                 bind:value={$userData.IDNr}
                 required
             />
-            <input
-                type="text"
-                placeholder="Role"
+            <select
                 class="bg-gray-700 text-white border-2 border-white rounded-md p-2"
                 bind:value={$userData.Role}
-                required
-            />
+                required>
+                <option value="" disabled>Choose Role</option>
+                {#each roles as role}
+                    <option value={role}>{role}</option>
+                {/each}
+        </select>
             <button class="bg-white p-2 rounded-md" type="submit" >Generate QR</button>
         </div>
     </div>
@@ -75,13 +79,13 @@
                     anchorOuterFill: "black",
                     moduleFill: "black",
                 }}
-                alt="qr"
+                alt="qr" id="qr-code"
             />
         </div>
     </div>
     <div class=" flex justify-center">
         <button class="bg-white m-8 p-2 rounded-md" on:click={downloadImg}
-            >Downlaod QR Code</button
+            >Save SVG</button
         >
     </div>
 </form>
