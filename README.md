@@ -5,7 +5,6 @@ This is a QR-code generator built with Svelte.
 ## Features
 
 - Generate QR codes for various types of data
-- Customize QR code size, color, and error correction level
 - Download generated QR codes as image files
 
 ## Installation
