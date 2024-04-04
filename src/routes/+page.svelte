@@ -65,7 +65,7 @@
                     <option value={role}>{role}</option>
                 {/each}
         </select>
-            <button class="bg-white p-2 rounded-md" type="submit" >Generate QR</button>
+            <button class="bg-white p-2 rounded-md" type="submit" >Generate</button>
         </div>
     </div>
     <div class=" flex justify-center" >
@@ -85,7 +85,7 @@
     </div>
     <div class=" flex justify-center">
         <button class="bg-white m-8 p-2 rounded-md" on:click={downloadImg}
-            >Save SVG</button
+            >Download</button
         >
     </div>
 </form>

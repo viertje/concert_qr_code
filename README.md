@@ -35,11 +35,9 @@ This is a QR-code generator built with Svelte.
 
 3. Use the form to enter the data for which you want to generate a QR code.
 
-4. Customize the QR code size, color, and error correction level if desired.
+4. Click the "Generate" button to generate the QR code.
 
-5. Click the "Generate" button to generate the QR code.
-
-6. Click the "Download" button to download the generated QR code as an image file.
+5. Click the "Download" button to download the generated QR code as an image file.
 
 ## Contributing
 
