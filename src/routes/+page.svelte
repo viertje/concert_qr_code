@@ -73,7 +73,7 @@
             <img hidden={hideImg}
                 use:qr={{
                     data: `${$fixedUserData.name} ${$fixedUserData.IDNr} ${$fixedUserData.Role}`,
-                    logo: "https://svelte-put.vnphanquang.com/images/svelte-put-logo.svg",
+                    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Berufsbildungsschule_Winterthur_logo.svg/1200px-Berufsbildungsschule_Winterthur_logo.svg.png",
                     shape: "circle",
                     anchorInnerFill: "black",
                     anchorOuterFill: "black",
